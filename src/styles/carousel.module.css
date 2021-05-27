@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --size: 2px;
+    --borderStyle: solid;
+    --orange: #fd6f03;
+    --green: #6bfd03;
+    --syen: #03cbfd;
+    --itemsWidth: 100%;
+    --fontSize: 15px;
+    --fontFamily: "Bookman Old Style", sans-serif;
+}
+.main{
+    /*border: 2px solid green;*/
+    position: relative;
+}
+.rightArrow{
+    position: absolute;
+    content: "";
+    border-width: 15px;
+    border-style: solid;
+    border-color: black black black black;
+    border-radius: 50%;
+    bottom: 100%;
+    right: 0;
+    cursor: pointer;
+}
+.leftArrow{
+    position: absolute;
+    content: "";
+    border-width: 15px;
+    border-style: solid;
+    border-color: black black black black;
+    border-radius: 50%;
+    bottom: 100%;
+    cursor: pointer;
+}
+.carouselContainer{
+    /*border-right: 2px solid black;*/
+    overflow: hidden;
+    font-size: var(--fontSize);
+    font-family: var(--fontFamily);
+}
+.carouselListContainer{
+    /*border: 2px solid blue;*/
+    position: relative;
+    /*width: 2100px;*/
+    transition: left .8s ease-in-out 0s;
+}
+.carouselListContainer::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+.carouselListItem{
+    border: 2px solid #928d8d;
+    float: left;
+    /*width: 8.33%;*/
+    cursor: pointer;
+    text-align: center;
+    margin: 2px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #d5d8e0;
+    transition: background-color .4s ease-in-out 0s;
+}
+
+.carouselListItem:hover{
+    background-color: #a8aab1;
+}
+
+.imageContainer{
+    border-bottom: 1px solid #a8aab1;
+    transition: width .3s ease-in-out 0s;
+}
+.dateContainer{
+    transition: font-size .3s ease-in-out 0s;
+}
+
+@media only screen and (max-width: 1059px){
+    .imageContainer img{
+        width: 60%;
+        height: auto;
+    }
+    .dateContainer{
+        font-size: 1.3vw;
+    }
+}
